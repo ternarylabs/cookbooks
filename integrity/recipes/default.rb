@@ -71,16 +71,15 @@ end
     version "1.0.0"
   end
 end
-ree_gem "sqlite3-ruby" do
-  action :install
-  version "1.2.1"
-end  
 ree_gem "bcat" do
   action :install
   version "0.5.0"
 end  
-
-%w{ sinatra-ditties rake bcat rack activerecord delayed_job }.each do |gem|
+ree_gem "rack" do
+  action :install
+  version "1.1.0"
+end  
+%w{ sinatra-ditties rake bcat rack }.each do |gem|
   ree_gem gem do
     action :install
   end
@@ -102,10 +101,34 @@ integrity = search(:admins, "id:integrity").first
 template "#{node[:integrity][:install_path]}/init.rb" do
     source "init.rb.erb"
     variables :token => github['token'], :user => integrity['user'], :password => integrity['pass'], :base_url => node[:integrity][:server_name]
+    mode 0755
+    owner "deploy"
+    group "deploy"    
 end
 
-execute "rake db" do
-  cwd node[:integrity][:install_path]
+%w{ log builds }.each do |dir|
+  directory "#{node[:integrity][:install_path]}/#{dir}" do
+    owner "deploy"
+    group "deploy"
+    mode 0755
+    action :create
+  end
+end
+
+file "#{node[:integrity][:install_path]}/Gemfile" do
+  action :delete
+end
+
+execute "chown -R deploy #{node[:integrity][:install_path]}" do
+end
+
+execute "generate_database" do
+  user "deploy"
+  group "deploy"
+  cwd "#{node[:integrity][:install_path]}"
+  command "#{node[:ruby_enterprise][:install_path]}/bin/rake db"
+  creates "#{node[:integrity][:install_path]}/integrity.db"
+  action :run
 end
 
 include_recipe "integrity::passenger-nginx"

@@ -62,4 +62,8 @@ else
   end
 
   r.run_action(:install)
+
+  ree_gem "mysql" do
+    action :install
+  end
 end

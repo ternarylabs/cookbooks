@@ -1,0 +1,5 @@
+maintainer       "Ternary Labs"
+maintainer_email "cookbooks@ternarylabs.com"
+license          "Apache 2.0"
+description      "Generates ssh keys for github"
+version          "0.0.1"

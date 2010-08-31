@@ -1,0 +1,29 @@
+{
+    "version": "0.0.1",
+    "conflicting": {
+    },
+    "attributes": {
+    },
+    "providing": {
+    },
+    "license": "Apache 2.0",
+    "maintainer": "Ternary Labs",
+    "recipes": {
+    },
+    "replacing": {
+    },
+    "dependencies": {
+    },
+    "maintainer_email": "cookbooks@ternarylabs.com",
+    "groupings": {
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "description": "Generates ssh keys for github",
+    "name": "ssh_keys",
+    "suggestions": {
+    },
+    "platforms": {
+    }
+  }

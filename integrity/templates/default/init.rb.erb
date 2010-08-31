@@ -2,12 +2,13 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 
 require 'rubygems'
 require "integrity"
+require "integrity/notifier/email"
 
 Integrity.configure do |c|
   c.database  "sqlite3:integrity.db"
   c.directory "builds"
   c.base_url  "http://<%= @base_url %>"
-  c.log       "integrity.log"
+  c.log       "log/integrity.log"
   c.builder   :threaded, 5
   c.user "<%= @user %>"
   c.pass "<%= @password %>"
