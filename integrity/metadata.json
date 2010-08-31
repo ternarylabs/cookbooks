@@ -1,0 +1,38 @@
+{
+    "version": "0.0.2",
+    "conflicting": {
+    },
+    "attributes": {
+    },
+    "providing": {
+    },
+    "license": "Apache 2.0",
+    "maintainer": "Ternary Labs",
+    "recipes": {
+    },
+    "replacing": {
+    },
+    "dependencies": {
+      "sqlite": [
+
+      ],
+      "passenger_enterprise": [
+
+      ],
+      "git": [
+
+      ]
+    },
+    "maintainer_email": "cookbooks@ternarylabs.com",
+    "groupings": {
+    },
+    "long_description": "Integrity cookbook\n==================\n",
+    "recommendations": {
+    },
+    "description": "Deploys and configures Integrity",
+    "name": "integrity",
+    "suggestions": {
+    },
+    "platforms": {
+    }
+  }
