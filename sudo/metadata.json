@@ -1,6 +1,16 @@
 {
-    "providing": {
+    "version": "0.9.1",
+    "maintainer": "Opscode, Inc.",
+    "replacing": {
     },
+    "description": "Installs sudo and configures /etc/sudoers",
+    "recipes": {
+      "sudo": "Installs sudo and configures /etc/sudoers"
+    },
+    "maintainer_email": "cookbooks@opscode.com",
+    "groupings": {
+    },
+    "long_description": "",
     "attributes": {
       "authorization/sudoers/groups": {
         "required": "optional",
@@ -57,13 +67,17 @@
         "display_name": "Authorization Sudoers"
       }
     },
-    "replacing": {
+    "recommendations": {
     },
     "dependencies": {
     },
-    "groupings": {
+    "suggestions": {
     },
-    "recommendations": {
+    "conflicting": {
+    },
+    "license": "Apache 2.0",
+    "name": "sudo",
+    "providing": {
     },
     "platforms": {
       "debian": [
@@ -84,19 +98,5 @@
       "redhat": [
 
       ]
-    },
-    "license": "Apache 2.0",
-    "version": "0.9.1",
-    "maintainer": "Opscode, Inc.",
-    "suggestions": {
-    },
-    "recipes": {
-      "sudo": "Installs sudo and configures /etc/sudoers"
-    },
-    "maintainer_email": "cookbooks@opscode.com",
-    "name": "sudo",
-    "conflicting": {
-    },
-    "description": "Installs sudo and configures /etc/sudoers",
-    "long_description": ""
+    }
   }
